@@ -1,94 +1,29 @@
 // ? computerPart & accessories
 let monitors = [
-  {
-    id: 1,
-    catName: "monitor",
-    name: "benQ",
-    model: "GW2780",
-    size: "27-inch",
-    price: "7960000",
-    src: "./item-picture/GW2780.jpg",
-  },
-  {
-    id: 2,
-    catName: "monitor",
-    name: "benQ",
-    model: "XL2740",
-    size: "27-inch",
-    price: "20300000",
-    src: "./item-picture/XL2740.jpg",
-  },
-  {
-    id: 3,
-    catName: "monitor",
-    name: "benQ",
-    model: "EW2480",
-    size: "23.8-inch",
-    price: "8110000",
-    src: "./item-picture/EW2480.jpg",
-  },
-  {
-    id: 4,
-    catName: "monitor",
-    name: "benQ",
-    model: "EW3280U",
-    size: "32-inch",
-    price: "30600000",
-    src: "./item-picture/EW3280U.jpg",
-  },
-  {
-    id: 5,
-    catName: "monitor",
-    name: "ASUS",
-    model: "VZ24EHE",
-    size: "24-inch",
-    price: "6200000",
-    src: "./item-picture/VZ24EHE.jpg",
-  },
-  {
-    id: 6,
-    catName: "monitor",
-    name: "ASUS",
-    model: "VP228HI",
-    size: "21.5-inch",
-    price: "unavaible",
-    src: "./item-picture/VP228HI.jpg",
-  },
-  {
-    id: 7,
-    catName: "monitor",
-    name: "SAMSUNG",
-    model: "S22A330",
-    size: "22-inch",
-    price: "3660000",
-    src: "./item-picture/S22A330.jpg",
-  },
-  {
-    id: 8,
-    catName: "monitor",
-    name: "SAMSUNG",
-    model: "C310",
-    size: "24-inch",
-    price: "6900000",
-    src: "./item-picture/C310.jpg",
-  },
-  {
-    id: 9,
-    catName: "monitor",
-    name: "Gplus",
-    model: "GDM-245LN",
-    size: "24-inch",
-    price: "4860000",
-    src: "./item-picture/GDM-245LN.jpg",
-  },
-  {
-    id: 10,
-    catName: "monitor",
-    name: "Gplus",
-    model: "GDM-226LN",
-    size: "22-inch",
-    price: "4380000",
-    src: "./item-picture/GDM-226LN.jpg",
-  },
+  ["monitor", "benQ", 7_960_000, "./item-picture/GW2780.jpg", "GW2780"],
+  ["monitor", "benQ", 20_300_000, "./item-picture/XL2740.jpg", "XL2740"],
+  ["monitor", "benQ", 8_110_000, "./item-picture/EW2480.jpg", "EW2480"],
+  ["monitor", "benQ", 30_600_000, "./item-picture/EW3280U.jpg", "EW3280U"],
+  ["monitor", "ASUS", 6_200_000, "./item-picture/VZ24EHE.jpg", "VZ24EHE"],
+  ["monitor", "ASUS", 7_780_000, "./item-picture/VP228HI.jpg", "VP228HI"],
+  ["monitor", "SAMSUNG", 3_660_000, "./item-picture/S22A330.jpg", "S22A330"],
+  ["monitor", "SAMSUNG", 6_900_000, "./item-picture/C310.jpg", "C310"],
+  ["monitor", "Gplus", 4_860_000, "./item-picture/GDM-245LN.jpg", "GDM-245LN"],
+  ["monitor", "Gplus", 4_380_000, "./item-picture/GW2780.jpg", "GDM-226LN"],
 ];
-export { monitors };
+let idTag = "monitors";
+let monitorsValuesArray = [];
+for (let i = 0; i < monitors.length; i++) {
+  let monitorNewObject = new Object();
+  monitorNewObject.id = idTag + (i + 1);
+  monitorNewObject.catName = monitors[i][1];
+  monitorNewObject.brand = monitors[i][2];
+  monitorNewObject.price = monitors[i][3];
+  monitorNewObject.src = monitors[i][4];
+  monitorNewObject.model = monitors[i][5];
+  monitorNewObject.description = function () {
+    return ` ${this.brand} - ${this.model}`;
+  };
+  monitorsValuesArray.push(monitorNewObject);
+}
+export { monitorsValuesArray };
