@@ -26,4 +26,7 @@ for (let i = 0; i < monitors.length; i++) {
   };
   monitorsValuesArray.push(monitorNewObject);
 }
+/*
+todo: create generator function + git pull request + git overwrite +....
+*/
 export { monitorsValuesArray };
