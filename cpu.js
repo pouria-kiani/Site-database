@@ -44,5 +44,8 @@ for (let i = 0; i < cpu.length; i++) {
   cpuProductObj.src = [i][5];
   console.log(finalCpuCatArray.length);
   finalCpuCatArray.push(cpuProductObj);
+  cpuProductObj.description = function () {
+    return ` ${this.brand} - ${this.model}`;
+  };
 }
 console.log(finalCpuCatArray);
